@@ -8,24 +8,17 @@ The container was created as a base container for systemd based services.
 docker build --rm -t visioncoder/centos7-systemd .
 ```
 
-### Build this base image:
+### Pull the image from Docker hub
 
 ```
 docker pull visioncoder/centos7-systemd
 ```
 
-## Sample httpd container
+## Running a systemd enabled app container
 
 Here we show you how we can create a sample httpd container.
 
-Frist create a Dockerfile and setup the required service or services. Systemd can launch multiple services.
-
-```
-mkdir -p Apache2
-cd Apache2
-nano Dockerfile
-```
-Copy and paste
+In order to use the systemd enabled base container created above, you will need to create your `Dockerfile` similar to the one below.
 
 ```
 FROM visioncoder/centos7-systemd
@@ -41,7 +34,8 @@ Then build it.
 docker build --rm --no-cache -t c7-systemd-httpd .
 ```
 
-Launch it.
+
+In order to run a container with systemd, you will need to mount the cgroups volumes from the host. Below is an example command that will run the systemd enabled httpd container created earlier.
 
 ```
 docker run -ti -d \

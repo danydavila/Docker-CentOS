@@ -46,7 +46,7 @@ RUN ln -snf /usr/share/zoneinfo/Etc/UTC /etc/localtime && echo "Etc/UTC" > /etc/
     usermod -G apache,www-users nginx && \
     useradd -m -c "Web User" -d "/home/www-user" -s "/bin/bash" -g apache -u 2001 www-user && \
     usermod -G www-users,nginx www-user && \
-    mkdir -p /var/www && chown -R www-user:apache /var/www
+    mkdir -p /var/www && chown -R www-user:www-users /var/www
 
 RUN yum -y erase openssh-server >/dev/null 2>&1; \
     yum -y clean all && \
