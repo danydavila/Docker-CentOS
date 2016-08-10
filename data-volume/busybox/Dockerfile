@@ -1,3 +1,7 @@
+#===============================================================================
+#               Busybox Data volume                                           |
+#===============================================================================
+
 FROM busybox:latest
 
 MAINTAINER Dany Davila "<danydavila@gmail.com>"
@@ -21,8 +25,6 @@ RUN mkdir -p /var && \
    chown -R www-user:www-users /var/www && \
    chown -R www-user:www-users /home/www-user;
 
-VOLUME ["/var/www","/var/log/nginx","/home/www-user"]
-
 USER www-user
-VOLUME ["/var/www"]
+VOLUME ["/var/www","/home/www-user"]
 CMD ["echo", "Data container for www-user user"]

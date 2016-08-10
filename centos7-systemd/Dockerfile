@@ -1,7 +1,6 @@
 #==============================================================================#
 # CentOS 7 Base file from the official build of CentOS with Systemd integration#
-# systemd is now included in centos:latest base containers                     #
-# Author: Dany Davila <danydavila@gmail.com>                                   #
+# systemd is now included in centos:latest base containers                     #                            #
 # Github: https://github.com/danydavila/Docker-CentOS                          #
 #==============================================================================#
 

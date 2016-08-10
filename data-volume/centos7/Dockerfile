@@ -1,11 +1,10 @@
 #===============================================================================
-#               CentOS 7 Base file from the official build of CentOS.          |
-# Author: Dany Davila <danydavila@gmail.com>                                   |
+#               CentOS 7 Data volume                                           |
 #===============================================================================
 
 FROM centos:latest
 
-MAINTAINER "Dany Davila" <danydavila@gmail.com>,<dany@visioncoder.com>
+MAINTAINER "Dany Davila" <danydavila@gmail.com>
 
 RUN mkdir -p /usr/share/httpd && \
     mkdir -p /var/lib/nginx && \
@@ -20,5 +19,5 @@ RUN mkdir -p /usr/share/httpd && \
     mkdir -p /var/www && chown -R www-user:www-users /var/www
 
 USER www-user
-VOLUME ["/var/www"]
+VOLUME ["/var/www","/home/www-user","/var/log"]
 CMD ["echo", "Data container for www-users"]

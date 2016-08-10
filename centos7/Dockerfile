@@ -1,6 +1,5 @@
 #==============================================================================#
-#               CentOS 7 Base file from the official build of CentOS.          #
-# Author: Dany Davila <danydavila@gmail.com>                                   #
+#               CentOS 7 Base file from the official build of CentOS.          #                                #
 # Github: https://github.com/danydavila/Docker-CentOS                          #
 #==============================================================================#
 
