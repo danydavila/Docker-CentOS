@@ -8,7 +8,7 @@
 FROM centos:latest
 
 # File Author / Maintainer
-MAINTAINER "Dany Davila" <danydavila@gmail.com>,<dany@visioncoder.com>
+MAINTAINER "Dany Davila" <danydavila@gmail.com>
 
 # Install Install dependencies, development tools and basic tools
 RUN yum -y update && yum -y install gcc make gcc-c++ curl curl-devel wget \
