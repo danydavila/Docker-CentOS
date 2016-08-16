@@ -10,18 +10,16 @@ FROM centos:latest
 # File Author / Maintainer
 MAINTAINER "Dany Davila" <danydavila@gmail.com>
 
-# Install Development Tools and Basic tools.
-# These libraries cover Ruby, NodeJS and PHP.
-RUN yum -y update && yum -y install gcc make gcc-c++ curl curl-devel wget \
-    zlib zlib-devel bzip2 bzip2-devel patch make openssl openssl-devel sed \
-    patchutils automake gettext flex bison autoconf gdb swig subversion \
-    libtool intltool libaio-devel diffstat libpq-dev zlib1g-dev libssl-dev \
+# Install  development tools, basic tools for Ruby, NodeJS and PHP
+RUN yum -y update && yum -y install gcc make automake autoconf patch gcc-c++ \
+    wget curl curl-devel which gpg grep perl git gawk tar xz xz-libs sed \
+    zlib zlib-devel bzip2 bzip2-devel openssl openssl-devel openssl-libs \
+    gettext flex bison gdb swig subversion gd-devel libtool intltool zip \
+    libaio-devel diffstat libpq-dev zlib1g-dev libssl-dev patchutils unzip \
     sqlite sqlite-devel readline readline-devel postgresql-devel ncurses-devel \
-    indent doxygen byacc cscope gcc-gfortran perl kpartx pcre pcre-devel \
-    gd-devel libpcre3-dev glibc glibc-common krb5-libs openssl-libs \
-    libyaml-devel libffi-devel iconv-devel gdbm-devel postgresql-libs  \
-    mysql-devel gpg grep perl git tar xz xz-libs p7zip gawk rsync tree  \
-    httpd-tools libxslt-devel nano unrar zip unzip which jq
+    indent doxygen byacc cscope gcc-gfortran kpartx pcre pcre-devel python \
+    libpcre3-dev glibc glibc-common krb5-libs libffi-devel libyaml-devel \
+    iconv-devel gdbm-devel postgresql-libs mysql-devel httpd-tools libxslt-devel
 
 ENV container docker
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
