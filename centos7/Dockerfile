@@ -9,19 +9,12 @@ FROM centos:latest
 # File Author / Maintainer
 MAINTAINER "Dany Davila" <danydavila@gmail.com>
 
-# Install  development tools, basic tools for Ruby, NodeJS and PHP
-RUN yum -y update && yum -y install gcc make automake autoconf patch gcc-c++ \
-    wget curl curl-devel which gpg grep perl git gawk tar xz xz-libs sed \
-    zlib zlib-devel bzip2 bzip2-devel openssl openssl-devel openssl-libs \
-    gettext flex bison gdb swig subversion gd-devel libtool intltool zip \
-    libaio-devel diffstat libpq-dev zlib1g-dev libssl-dev patchutils unzip \
-    sqlite sqlite-devel readline readline-devel postgresql-devel ncurses-devel \
-    indent doxygen byacc cscope gcc-gfortran kpartx pcre pcre-devel python \
-    libpcre3-dev glibc glibc-common krb5-libs libffi-devel libyaml-devel \
-    iconv-devel gdbm-devel postgresql-libs mysql-devel httpd-tools libxslt-devel
+# Install  basic tools
+RUN yum -y update && yum -y install cronie wget curl git which gpg grep \
+    sed perl python openssl tar xz xz-libs
 
 # Installing process management.
-RUN yum -y update && yum install -y python-pip python-setuptools; \
+RUN yum install -y python-pip python-setuptools; \
     easy_install pip; \
     pip install supervisor;
 
