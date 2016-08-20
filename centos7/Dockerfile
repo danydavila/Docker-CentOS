@@ -11,7 +11,7 @@ MAINTAINER "Dany Davila" <danydavila@gmail.com>
 
 # Install  basic tools
 RUN yum -y update && yum -y install cronie wget curl git which gpg grep \
-    sed perl python openssl tar xz xz-libs
+    sed perl python openssl tar xz xz-libs e2fsprogs
 
 # Installing process management.
 RUN yum install -y python-pip python-setuptools; \
