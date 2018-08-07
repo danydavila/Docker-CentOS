@@ -7,7 +7,7 @@
 FROM centos:7
 
 # File Author / Maintainer
-MAINTAINER "Dany Davila" <danydavila@gmail.com>
+LABEL version="1.0" maintainer="Dany Davila <danydavila@gmail.com>"
 
 # Install  basic tools & dependencies
 RUN yum -y update && yum -y install gcc make patch cronie wget curl git which \
